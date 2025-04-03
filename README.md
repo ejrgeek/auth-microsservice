@@ -14,13 +14,13 @@ Microsserviço de autenticação básica com:
 
 ## Configuração inicial:
 1. Crie seu `.env`:
-```
+```bash
 DATABASE_URL=postgresql://user:password@localhost/auth_db
 JWT_SECRET_KEY=suachavemuitosecreta
 ``` 
 
 2. Configuração do Banco:
-```
+```bash
 CREATE DATABASE auth_db;
 CREATE USER auth_user WITH PASSWORD 'senha_segura';
 GRANT ALL PRIVILEGES ON DATABASE auth_db TO auth_user;
@@ -32,7 +32,7 @@ GRANT ALL PRIVILEGES ON SCHEMA auth_schema TO auth_user;
 ```
 
 3. Crie seu ambiente virtual e execute:
-```
+```bash
 pip install -r requirements.txt
 flask --app app run --debug --host=0.0.0.0
 ```
@@ -42,14 +42,14 @@ flask --app app run --debug --host=0.0.0.0
 - POST `/api/auth/register`
 
 **Body:**
-```
+```bash
 {
   "username": "novousuario",
   "password": "senhasegura123"
 }
 ```
 **Response:**
-```
+```bash
 {
   "message": "User created!",
   "token": "eyJhb...",
@@ -61,14 +61,14 @@ flask --app app run --debug --host=0.0.0.0
 - POST `/api/auth/login`
 
 **Body:**
-```
+```bash
 {
   "username": "novousuario",
   "password": "senhasegura123"
 }
 ```
 **Response:**
-```
+```bash
 {
   "token": "eyJhb...",
   "expires_in": 2592000
