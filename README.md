@@ -19,7 +19,19 @@ DATABASE_URL=postgresql://user:password@localhost/auth_db
 JWT_SECRET_KEY=suachavemuitosecreta
 ``` 
 
-2. Crie seu ambiente virtual e execute:
+2. Configuração do Banco:
+```
+CREATE DATABASE auth_db;
+CREATE USER auth_user WITH PASSWORD 'senha_segura';
+GRANT ALL PRIVILEGES ON DATABASE auth_db TO auth_user;
+GRANT CREATE, CONNECT ON DATABASE auth_db TO auth_user;
+GRANT ALL PRIVILEGES ON SCHEMA public TO auth_user;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO auth_user;
+CREATE SCHEMA auth_schema;
+GRANT ALL PRIVILEGES ON SCHEMA auth_schema TO auth_user;
+```
+
+3. Crie seu ambiente virtual e execute:
 ```
 pip install -r requirements.txt
 flask --app app run --debug --host=0.0.0.0
