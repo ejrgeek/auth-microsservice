@@ -1,8 +1,8 @@
 # Microsserviço de Autenticação (Auth-Service)
 
-##### Workshop: Deploy & Segurança em Aplicações Web
-O que fazer e o que não fazer
-Ministrado por: Erlon
+#### Workshop: Deploy & Segurança em Aplicações Web: O que fazer e o que não fazer
+
+##### Ministrado por: Erlon
 
 
 ## Visão Geral
