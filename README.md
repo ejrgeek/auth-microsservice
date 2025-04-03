@@ -31,8 +31,10 @@ CREATE SCHEMA auth_schema;
 GRANT ALL PRIVILEGES ON SCHEMA auth_schema TO auth_user;
 ```
 
-3. Crie seu ambiente virtual e execute:
+3. Aambiente virtual e execução:
 ```bash
+virtualenv venv
+. venv/bin/activate
 pip install -r requirements.txt
 flask --app app run --debug --host=0.0.0.0
 ```
